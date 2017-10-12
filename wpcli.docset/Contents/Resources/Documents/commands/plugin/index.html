@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WP-CLI Commands | WordPress Developer Resources</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' id='wp-dev-sass-compiled-css'  href='https://developer.wordpress.org/wp-content/themes/pub/wporg-developer/stylesheets/main.css?ver=20171008' type='text/css' media='all' />
+</head>
+ 
+
+<body id="wordpress-org" class="command-template-default single single-command postid-25596 admin-bar no-customize-support">
+<div class="devhub-wrap"><div id="content" class="site-content">
+
+	<div id="content-area" class="command-template-default single single-command postid-25596 admin-bar no-customize-support">
+
+		
+		<div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
+			<span class="trail-browse">Browse:</span> 
+			<span class="trail-begin"><a href="https://developer.wordpress.org" title="WordPress Developer Resources" rel="home">Home</a></span> <span class="sep">&#47;</span> 
+			<span class="trail-inner"><a href="../commands.html">Commands</a></span> <span class="sep">&#47;</span> <span class="trail-end">wp plugin</span>
+		<span class="quick-links">(<a href="index.html#examples">examples</a>|<a href="index.html#subcommands">subcommands</a>)</span></div>
+		<main id="main" class="site-main" role="main">
+
+		
+			<article id="post-25596" class="post-25596 command type-command status-publish hentry">
+	<header class="entry-header">
+				<h2 class="entry-title"><a href="index.html" rel="bookmark">wp plugin <span>&#60;command&#62;</a></h2>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p class="excerpt">Manage plugins.</p>
+		
+		
+
+<h3 class="toc-heading" id="examples" tabindex="-1">EXAMPLES <a href="index.html#examples" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">EXAMPLES</span></a></h3>
+<pre><code># Activate plugin
+$ wp plugin activate hello
+Plugin 'hello' activated.
+Success: Activated 1 of 1 plugins.
+
+# Deactivate plugin
+$ wp plugin deactivate hello
+Plugin 'hello' deactivated.
+Success: Deactivated 1 of 1 plugins.
+
+# Delete plugin
+$ wp plugin delete hello
+Deleted 'hello' plugin.
+Success: Deleted 1 of 1 plugins.
+
+# Install the latest version from wordpress.org and activate
+$ wp plugin install bbpress --activate
+Installing bbPress (2.5.9)
+Downloading install package from https://downloads.wordpress.org/plugin/bbpress.2.5.9.zip...
+Using cached file '/home/vagrant/.wp-cli/cache/plugin/bbpress-2.5.9.zip'...
+Unpacking the package...
+Installing the plugin...
+Plugin installed successfully.
+Activating 'bbpress'...
+Plugin 'bbpress' activated.
+Success: Installed 1 of 1 plugins.
+</code></pre>
+
+			<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="subcommands" tabindex="-1">SUBCOMMANDS <a href="index.html#subcommands" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">SUBCOMMANDS</span></a></h3>
+			<table>
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+											<tr>
+							<td><a href="activate/index.html">wp plugin activate</a></td>
+							<td><p>Activate a plugin.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="deactivate/index.html">wp plugin deactivate</a></td>
+							<td><p>Deactivate a plugin.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="delete/index.html">wp plugin delete</a></td>
+							<td><p>Delete plugin files without deactivating or uninstalling.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="get/index.html">wp plugin get</a></td>
+							<td><p>Get details about an installed plugin.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="install/index.html">wp plugin install</a></td>
+							<td><p>Install a plugin.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="is-installed/index.html">wp plugin is-installed</a></td>
+							<td><p>Check if the plugin is installed.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="list/index.html">wp plugin list</a></td>
+							<td><p>Get a list of plugins.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="path/index.html">wp plugin path</a></td>
+							<td><p>Get the path to a plugin or to the plugin directory.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="search/index.html">wp plugin search</a></td>
+							<td><p>Search the WordPress.org plugin directory.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="status/index.html">wp plugin status</a></td>
+							<td><p>See the status of one or all plugins.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="toggle/index.html">wp plugin toggle</a></td>
+							<td><p>Toggle a plugin&#8217;s activation state.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="uninstall/index.html">wp plugin uninstall</a></td>
+							<td><p>Uninstall a plugin.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="update/index.html">wp plugin update</a></td>
+							<td><p>Update one or more plugins.</p>
+</td>
+						</tr>
+									</tbody>
+			</table>
+		<p><em><a href="https://wordpress.org/about/license/" title="WordPress is open source software">License / GPLv2</a></em></p>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+
+</div></body>
+</html>

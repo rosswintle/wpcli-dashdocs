@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WP-CLI Commands | WordPress Developer Resources</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' id='wp-dev-sass-compiled-css'  href='https://developer.wordpress.org/wp-content/themes/pub/wporg-developer/stylesheets/main.css?ver=20171008' type='text/css' media='all' />
+</head>
+ 
+
+<body id="wordpress-org" class="command-template-default single single-command postid-27788 admin-bar no-customize-support">
+<div class="devhub-wrap"><div id="content" class="site-content">
+
+	<div id="content-area" class="command-template-default single single-command postid-27788 admin-bar no-customize-support">
+
+		
+		<div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
+			<span class="trail-browse">Browse:</span> 
+			<span class="trail-begin"><a href="https://developer.wordpress.org" title="WordPress Developer Resources" rel="home">Home</a></span> <span class="sep">&#47;</span> 
+			<span class="trail-inner"><a href="../../commands.html">Commands</a></span> <span class="sep">&#47;</span> 
+			<span class="trail-inner"><a href="../index.html" title="wp db">wp db</a></span> <span class="sep">&#47;</span> <span class="trail-end">wp db search</span>
+		<span class="quick-links">(<a href="index.html#options">options</a>|<a href="index.html#examples">examples</a>|<a href="index.html#global-parameters">global parameters</a>)</span></div>
+		<main id="main" class="site-main" role="main">
+
+		
+			<article id="post-27788" class="post-27788 command type-command status-publish hentry">
+	<header class="entry-header">
+				<h2 class="entry-title"><a href="index.html" rel="bookmark">wp db search</a></h2>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p class="excerpt">Find a string in the database.</p>
+		
+		
+
+<p>Searches through all or a selection of database tables for a given string, Outputs colorized references to the string.</p>
+<p>Defaults to searching through all tables registered to $<a href="https://developer.wordpress.org/reference/classes/wpdb/">wpdb</a>. On multisite, this default is limited to the tables for the current site.</p>
+<h3 class="toc-heading" id="options" tabindex="-1">OPTIONS <a href="index.html#options" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">OPTIONS</span></a></h3>
+<dl>
+<dt>&lt;search&gt;</dt>
+<dd>String to search for. The search is case-insensitive by default.</dd>
+<dt>[&lt;tables&gt;&#8230;]</dt>
+<dd>One or more tables to search through for the string.</dd>
+<dt>[&#045;-network]</dt>
+<dd>Search through all the tables registered to $<a href="https://developer.wordpress.org/reference/classes/wpdb/">wpdb</a> in a multisite install.</dd>
+<dt>[&#045;-all-tables-with-prefix]</dt>
+<dd>Search through all tables that match the registered table prefix, even if not registered on $<a href="https://developer.wordpress.org/reference/classes/wpdb/">wpdb</a>. On one hand, sometimes plugins use tables without registering them to $<a href="https://developer.wordpress.org/reference/classes/wpdb/">wpdb</a>. On another hand, this could return tables you don&#8217;t expect. Overrides &#8211;network.</dd>
+<dt>[&#045;-all-tables]</dt>
+<dd>Search through ALL tables in the database, regardless of the prefix, and even if not registered on $<a href="https://developer.wordpress.org/reference/classes/wpdb/">wpdb</a>. Overrides &#8211;network and &#8211;all-tables-with-prefix.</dd>
+<dt>[&#045;-before_context=&lt;num&gt;]</dt>
+<dd>Number of characters to display before the match.<br />
+&#045;&#045;&#045;<br />
+default: 40<br />
+&#045;&#045;&#045;</dd>
+<dt>[&#045;-after_context=&lt;num&gt;]</dt>
+<dd>Number of characters to display after the match.<br />
+&#045;&#045;&#045;<br />
+default: 40<br />
+&#045;&#045;&#045;</dd>
+<dt>[&#045;-regex]</dt>
+<dd>Runs the search as a regular expression (without delimiters). The search becomes case-sensitive (i.e. no PCRE flags are added, except &#8216;u&#8217; if the database charset is UTF-8). Delimiters must be escaped if they occur in the expression.</dd>
+<dt>[&#045;-regex-flags=&lt;regex-flags&gt;]</dt>
+<dd>Pass PCRE modifiers to the regex search (e.g. &#8216;i&#8217; for case-insensitivity). Note that &#8216;u&#8217; (UTF-8 mode) will not be automatically added.</dd>
+<dt>[&#045;-regex-delimiter=&lt;regex-delimiter&gt;]</dt>
+<dd>The delimiter to use for the regex. It must be escaped if it appears in the search string.<br />
+&#045;&#045;&#045;<br />
+default: /<br />
+&#045;&#045;&#045;</dd>
+<dt>[&#045;-table_column_once]</dt>
+<dd>Output the &#8216;table:column&#8217; line once before all matching row lines in the table column rather than before each matching row.</dd>
+<dt>[&#045;-one_line]</dt>
+<dd>Place the &#8216;table:column&#8217; output on the same line as the row id and match (&#8216;table:column:id:match&#8217;). Overrides &#8211;table_column_once.</dd>
+<dt>[&#045;-matches_only]</dt>
+<dd>Only output the string matches (including context). No &#8216;table:column&#8217;s or row ids are outputted.</dd>
+<dt>[&#045;-stats]</dt>
+<dd>Output stats on the number of matches found, time taken, tables/columns/rows searched, tables skipped.</dd>
+<dt>[&#045;-table_column_color=&lt;color_code&gt;]</dt>
+<dd>Percent color code to use for the &#8216;table:column&#8217; output. For a list of available percent color codes, see below. Default &#8216;%G&#8217; (bright green).</dd>
+<dt>[&#045;-id_color=&lt;color_code&gt;]</dt>
+<dd>Percent color code to use for the row id output. For a list of available percent color codes, see below. Default &#8216;%Y&#8217; (bright yellow).</dd>
+<dt>[&#045;-match_color=&lt;color_code&gt;]</dt>
+<dd>Percent color code to use for the match (unless both before and after context are 0, when no color code is used). For a list of available percent color codes, see below. Default &#8216;%3%k&#8217; (black on a mustard background).</dd>
+</dl>
+<p>The percent color codes available are:<br />
+&#8216;%y&#8217; Yellow (dark) (mustard)<br />
+&#8216;%g&#8217; Green (dark)<br />
+&#8216;%b&#8217; Blue (dark)<br />
+&#8216;%r&#8217; Red (dark)<br />
+&#8216;%m&#8217; Magenta (dark)<br />
+&#8216;%c&#8217; Cyan (dark)<br />
+&#8216;%w&#8217; White (dark) (light gray)<br />
+&#8216;%k&#8217; Black<br />
+&#8216;%Y&#8217; Yellow (bright)<br />
+&#8216;%G&#8217; Green (bright)<br />
+&#8216;%B&#8217; Blue (bright)<br />
+&#8216;%R&#8217; Red (bright)<br />
+&#8216;%M&#8217; Magenta (bright)<br />
+&#8216;%C&#8217; Cyan (bright)<br />
+&#8216;%W&#8217; White<br />
+&#8216;%K&#8217; Black (bright) (dark gray)<br />
+&#8216;%3&#8217; Yellow background (dark) (mustard)<br />
+&#8216;%2&#8217; Green background (dark)<br />
+&#8216;%4&#8217; Blue background (dark)<br />
+&#8216;%1&#8217; Red background (dark)<br />
+&#8216;%5&#8217; Magenta background (dark)<br />
+&#8216;%6&#8217; Cyan background (dark)<br />
+&#8216;%7&#8217; White background (dark) (light gray)<br />
+&#8216;%0&#8217; Black background<br />
+&#8216;%8&#8217; Reverse<br />
+&#8216;%U&#8217; Underline<br />
+&#8216;%F&#8217; Blink (unlikely to work)<br />
+They can be concatenated. For instance, the default match color of black on a mustard (dark yellow) background &#8216;%3%k&#8217; can be made black on a bright yellow background with &#8216;%Y%0%8&#8217;.</p>
+<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="examples" tabindex="-1">EXAMPLES <a href="index.html#examples" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">EXAMPLES</span></a></h3>
+<pre><code># Search through the database for the 'wordpress-develop' string
+$ wp db search wordpress-develop
+wp_options:option_value
+1:http://wordpress-develop.dev
+wp_options:option_value
+1:http://example.com/foo
+    ...
+
+# Search through a multisite database on the subsite 'foo' for the 'example.com' string
+$ wp db search example.com --url=example.com/foo
+wp_2_comments:comment_author_url
+1:http://example.com/
+wp_2_options:option_value
+    ...
+
+# Search through the database for the 'https?://' regular expression, printing stats.
+$ wp db search 'https?:\/\/' --regex --stats
+wp_comments:comment_author_url
+1:https://wordpress.org/
+    ...
+Success: Found 99146 matches in 10.752s (10.559s searching). Searched 12 tables, 53 columns, 1358907 rows. 1 table skipped: wp_term_relationships.
+</code></pre>
+<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="global-parameters" tabindex="-1">GLOBAL PARAMETERS <a href="index.html#global-parameters" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">GLOBAL PARAMETERS</span></a></h3>
+<p>These <a href="https://make.wordpress.org/cli/handbook/config/">global parameters</a> have the same behavior across all commands and affect how WP-CLI interacts with WordPress.</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Argument</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>--path=&lt;path&gt;</code></td>
+<td align="left">Path to the WordPress files.</td>
+</tr>
+<tr>
+<td align="left"><code>--url=&lt;url&gt;</code></td>
+<td align="left">Pretend request came from given URL. In multisite, this argument is how the target site is specified.</td>
+</tr>
+<tr>
+<td align="left"><code>--ssh=[&lt;scheme&gt;:][&lt;user&gt;@]&lt;host|container&gt;[:&lt;port&gt;][&lt;path&gt;]</code></td>
+<td align="left">Perform operation against a remote server over SSH (or a container using scheme of &#8220;docker&#8221; or &#8220;docker-compose&#8221;).</td>
+</tr>
+<tr>
+<td align="left"><code>--http=&lt;http&gt;</code></td>
+<td align="left">Perform operation against a remote WordPress install over HTTP.</td>
+</tr>
+<tr>
+<td align="left"><code>--user=&lt;id|login|email&gt;</code></td>
+<td align="left">Set the WordPress user.</td>
+</tr>
+<tr>
+<td align="left"><code>--skip-plugins[=&lt;plugin&gt;]</code></td>
+<td align="left">Skip loading all or some plugins. Note: mu-plugins are still loaded.</td>
+</tr>
+<tr>
+<td align="left"><code>--skip-themes[=&lt;theme&gt;]</code></td>
+<td align="left">Skip loading all or some themes.</td>
+</tr>
+<tr>
+<td align="left"><code>--skip-packages</code></td>
+<td align="left">Skip loading all installed packages.</td>
+</tr>
+<tr>
+<td align="left"><code>--require=&lt;path&gt;</code></td>
+<td align="left">Load PHP file before running the command (may be used more than once).</td>
+</tr>
+<tr>
+<td align="left"><code>--[no-]color</code></td>
+<td align="left">Whether to colorize the output.</td>
+</tr>
+<tr>
+<td align="left"><code>--debug[=&lt;group&gt;]</code></td>
+<td align="left">Show all PHP errors; add verbosity to WP-CLI bootstrap.</td>
+</tr>
+<tr>
+<td align="left"><code>--prompt[=&lt;assoc&gt;]</code></td>
+<td align="left">Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values.</td>
+</tr>
+<tr>
+<td align="left"><code>--quiet</code></td>
+<td align="left">Suppress informational messages.</td>
+</tr>
+</tbody>
+</table>
+<p><em><a href="https://wordpress.org/about/license/" title="WordPress is open source software">License / GPLv2</a></em></p>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+
+</div></body>
+</html>

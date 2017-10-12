@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WP-CLI Commands | WordPress Developer Resources</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' id='wp-dev-sass-compiled-css'  href='https://developer.wordpress.org/wp-content/themes/pub/wporg-developer/stylesheets/main.css?ver=20171008' type='text/css' media='all' />
+</head>
+ 
+
+<body id="wordpress-org" class="command-template-default single single-command postid-25786 admin-bar no-customize-support">
+<div class="devhub-wrap"><div id="content" class="site-content">
+
+	<div id="content-area" class="command-template-default single single-command postid-25786 admin-bar no-customize-support">
+
+		
+		<div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
+			<span class="trail-browse">Browse:</span> 
+			<span class="trail-begin"><a href="https://developer.wordpress.org" title="WordPress Developer Resources" rel="home">Home</a></span> <span class="sep">&#47;</span> 
+			<span class="trail-inner"><a href="../../commands.html">Commands</a></span> <span class="sep">&#47;</span> 
+			<span class="trail-inner"><a href="../index.html" title="wp user">wp user</a></span> <span class="sep">&#47;</span> <span class="trail-end">wp user meta</span>
+		<span class="quick-links">(<a href="index.html#examples">examples</a>|<a href="index.html#subcommands">subcommands</a>)</span></div>
+		<main id="main" class="site-main" role="main">
+
+		
+			<article id="post-25786" class="post-25786 command type-command status-publish hentry">
+	<header class="entry-header">
+				<h2 class="entry-title"><a href="index.html" rel="bookmark">wp user meta <span>&#60;command&#62;</a></h2>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p class="excerpt">Manage user custom fields.</p>
+		
+		
+
+<h3 class="toc-heading" id="examples" tabindex="-1">EXAMPLES <a href="index.html#examples" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">EXAMPLES</span></a></h3>
+<pre><code># Add user meta
+$ wp user meta add 123 bio "Mary is an WordPress developer."
+Success: Added custom field.
+
+# List user meta
+$ wp user meta list 123 --keys=nickname,description,wp_capabilities
++---------+-----------------+--------------------------------+
+| user_id | meta_key        | meta_value                     |
++---------+-----------------+--------------------------------+
+| 123     | nickname        | supervisor                     |
+| 123     | description     | Mary is a WordPress developer. |
+| 123     | wp_capabilities | {"administrator":true}         |
++---------+-----------------+--------------------------------+
+
+# Update user meta
+$ wp user meta update 123 bio "Mary is an awesome WordPress developer."
+Success: Updated custom field 'bio'.
+
+# Delete user meta
+$ wp user meta delete 123 bio
+Success: Deleted custom field.
+</code></pre>
+
+			<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="subcommands" tabindex="-1">SUBCOMMANDS <a href="index.html#subcommands" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">SUBCOMMANDS</span></a></h3>
+			<table>
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+											<tr>
+							<td><a href="https://developer.wordpress.org/cli/commands/user/meta/add/">wp user meta add</a></td>
+							<td><p>Add a meta field.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="https://developer.wordpress.org/cli/commands/user/meta/delete/">wp user meta delete</a></td>
+							<td><p>Delete a meta field.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="https://developer.wordpress.org/cli/commands/user/meta/get/">wp user meta get</a></td>
+							<td><p>Get meta field value.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="https://developer.wordpress.org/cli/commands/user/meta/list/">wp user meta list</a></td>
+							<td><p>List all metadata associated with a user.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="https://developer.wordpress.org/cli/commands/user/meta/update/">wp user meta update</a></td>
+							<td><p>Update a meta field.</p>
+</td>
+						</tr>
+									</tbody>
+			</table>
+		<p><em><a href="https://wordpress.org/about/license/" title="WordPress is open source software">License / GPLv2</a></em></p>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+
+</div></body>
+</html>

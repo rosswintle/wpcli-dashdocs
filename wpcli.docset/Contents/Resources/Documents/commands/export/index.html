@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WP-CLI Commands | WordPress Developer Resources</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' id='wp-dev-sass-compiled-css'  href='https://developer.wordpress.org/wp-content/themes/pub/wporg-developer/stylesheets/main.css?ver=20171008' type='text/css' media='all' />
+</head>
+ 
+
+<body id="wordpress-org" class="command-template-default single single-command postid-25586 admin-bar no-customize-support">
+<div class="devhub-wrap"><div id="content" class="site-content">
+
+	<div id="content-area" class="command-template-default single single-command postid-25586 admin-bar no-customize-support">
+
+		
+		<div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
+			<span class="trail-browse">Browse:</span> 
+			<span class="trail-begin"><a href="https://developer.wordpress.org" title="WordPress Developer Resources" rel="home">Home</a></span> <span class="sep">&#47;</span> 
+			<span class="trail-inner"><a href="../commands.html">Commands</a></span> <span class="sep">&#47;</span> <span class="trail-end">wp export</span>
+		<span class="quick-links">(<a href="index.html#options">options</a>|<a href="index.html#filters">filters</a>|<a href="index.html#examples">examples</a>|<a href="index.html#global-parameters">global parameters</a>)</span></div>
+		<main id="main" class="site-main" role="main">
+
+		
+			<article id="post-25586" class="post-25586 command type-command status-publish hentry">
+	<header class="entry-header">
+				<h2 class="entry-title"><a href="index.html" rel="bookmark">wp export</a></h2>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p class="excerpt">Export WordPress content to a WXR file.</p>
+		
+		
+
+<p>Generates one or more WXR files containing authors, terms, posts, comments, and attachments. WXR files do not include site configuration (options) or the attachment files themselves.</p>
+<h3 class="toc-heading" id="options" tabindex="-1">OPTIONS <a href="index.html#options" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">OPTIONS</span></a></h3>
+<dl>
+<dt>[&#045;-dir=&lt;dirname&gt;]</dt>
+<dd>Full path to directory where WXR export files should be stored. Defaults to current working directory.</dd>
+<dt>[&#045;-skip_comments]</dt>
+<dd>Don&#8217;t include comments in the WXR export file.</dd>
+<dt>[&#045;-max_file_size=&lt;MB&gt;]</dt>
+<dd>A single export file should have this many megabytes.<br />
+&#045;&#045;&#045;<br />
+default: 15<br />
+&#045;&#045;&#045;</dd>
+</dl>
+<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="filters" tabindex="-1">FILTERS <a href="index.html#filters" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">FILTERS</span></a></h3>
+<dl>
+<dt>[&#045;-start_date=&lt;date&gt;]</dt>
+<dd>Export only posts published after this date, in format YYYY-MM-DD.</dd>
+<dt>[&#045;-end_date=&lt;date&gt;]</dt>
+<dd>Export only posts published before this date, in format YYYY-MM-DD.</dd>
+<dt>[&#045;-post_type=&lt;post-type&gt;]</dt>
+<dd>Export only posts with this post_type. Separate multiple post types with a comma.<br />
+&#045;&#045;&#045;<br />
+default: any<br />
+&#045;&#045;&#045;</dd>
+<dt>[&#045;-post_type__not_in=&lt;post-type&gt;]</dt>
+<dd>Export all post types except those identified. Separate multiple post types with a comma. Defaults to none.</dd>
+<dt>[&#045;-post__in=&lt;pid&gt;]</dt>
+<dd>Export all posts specified as a comma- or space-separated list of IDs.</dd>
+<dt>[&#045;-start_id=&lt;pid&gt;]</dt>
+<dd>Export only posts with IDs greater than or equal to this post ID.</dd>
+<dt>[&#045;-author=&lt;author&gt;]</dt>
+<dd>Export only posts by this author. Can be either user login or user ID.</dd>
+<dt>[&#045;-category=&lt;name&gt;]</dt>
+<dd>Export only posts in this category.</dd>
+<dt>[&#045;-post_status=&lt;status&gt;]</dt>
+<dd>Export only posts with this status.</dd>
+<dt>[&#045;-filename_format=&lt;format&gt;]</dt>
+<dd>Use a custom format for export filenames. Defaults to &#8216;{site}.wordpress.{date}.{n}.xml&#8217;.</dd>
+</dl>
+<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="examples" tabindex="-1">EXAMPLES <a href="index.html#examples" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">EXAMPLES</span></a></h3>
+<pre><code># Export posts published by the user between given start and end date
+$ wp export --dir=/tmp/ --user=admin --post_type=post --start_date=2011-01-01 --end_date=2011-12-31
+Starting export process...
+Writing to file /tmp/staging.wordpress.2016-05-24.000.xml
+Success: All done with export.
+
+# Export posts by IDs
+$ wp export --dir=/tmp/ --post__in=123,124,125
+Starting export process...
+Writing to file /tmp/staging.wordpress.2016-05-24.000.xml
+Success: All done with export.
+
+# Export a random subset of content
+$ wp export --post__in="$(wp post list --post_type=post --orderby=rand --posts_per_page=8 --format=ids)"
+Starting export process...
+Writing to file /var/www/example.com/public_html/staging.wordpress.2016-05-24.000.xml
+Success: All done with export.
+</code></pre>
+<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="global-parameters" tabindex="-1">GLOBAL PARAMETERS <a href="index.html#global-parameters" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">GLOBAL PARAMETERS</span></a></h3>
+<p>These <a href="https://make.wordpress.org/cli/handbook/config/">global parameters</a> have the same behavior across all commands and affect how WP-CLI interacts with WordPress.</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Argument</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>--path=&lt;path&gt;</code></td>
+<td align="left">Path to the WordPress files.</td>
+</tr>
+<tr>
+<td align="left"><code>--url=&lt;url&gt;</code></td>
+<td align="left">Pretend request came from given URL. In multisite, this argument is how the target site is specified.</td>
+</tr>
+<tr>
+<td align="left"><code>--ssh=[&lt;scheme&gt;:][&lt;user&gt;@]&lt;host|container&gt;[:&lt;port&gt;][&lt;path&gt;]</code></td>
+<td align="left">Perform operation against a remote server over SSH (or a container using scheme of &#8220;docker&#8221; or &#8220;docker-compose&#8221;).</td>
+</tr>
+<tr>
+<td align="left"><code>--http=&lt;http&gt;</code></td>
+<td align="left">Perform operation against a remote WordPress install over HTTP.</td>
+</tr>
+<tr>
+<td align="left"><code>--user=&lt;id|login|email&gt;</code></td>
+<td align="left">Set the WordPress user.</td>
+</tr>
+<tr>
+<td align="left"><code>--skip-plugins[=&lt;plugin&gt;]</code></td>
+<td align="left">Skip loading all or some plugins. Note: mu-plugins are still loaded.</td>
+</tr>
+<tr>
+<td align="left"><code>--skip-themes[=&lt;theme&gt;]</code></td>
+<td align="left">Skip loading all or some themes.</td>
+</tr>
+<tr>
+<td align="left"><code>--skip-packages</code></td>
+<td align="left">Skip loading all installed packages.</td>
+</tr>
+<tr>
+<td align="left"><code>--require=&lt;path&gt;</code></td>
+<td align="left">Load PHP file before running the command (may be used more than once).</td>
+</tr>
+<tr>
+<td align="left"><code>--[no-]color</code></td>
+<td align="left">Whether to colorize the output.</td>
+</tr>
+<tr>
+<td align="left"><code>--debug[=&lt;group&gt;]</code></td>
+<td align="left">Show all PHP errors; add verbosity to WP-CLI bootstrap.</td>
+</tr>
+<tr>
+<td align="left"><code>--prompt[=&lt;assoc&gt;]</code></td>
+<td align="left">Prompt the user to enter values for all command arguments, or a subset specified as comma-separated values.</td>
+</tr>
+<tr>
+<td align="left"><code>--quiet</code></td>
+<td align="left">Suppress informational messages.</td>
+</tr>
+</tbody>
+</table>
+<p><em><a href="https://wordpress.org/about/license/" title="WordPress is open source software">License / GPLv2</a></em></p>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+
+</div></body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WP-CLI Commands | WordPress Developer Resources</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' id='wp-dev-sass-compiled-css'  href='https://developer.wordpress.org/wp-content/themes/pub/wporg-developer/stylesheets/main.css?ver=20171008' type='text/css' media='all' />
+</head>
+ 
+
+<body id="wordpress-org" class="command-template-default single single-command postid-25601 admin-bar no-customize-support">
+<div class="devhub-wrap"><div id="content" class="site-content">
+
+	<div id="content-area" class="command-template-default single single-command postid-25601 admin-bar no-customize-support">
+
+		
+		<div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
+			<span class="trail-browse">Browse:</span> 
+			<span class="trail-begin"><a href="https://developer.wordpress.org" title="WordPress Developer Resources" rel="home">Home</a></span> <span class="sep">&#47;</span> 
+			<span class="trail-inner"><a href="../commands.html">Commands</a></span> <span class="sep">&#47;</span> <span class="trail-end">wp scaffold</span>
+		<span class="quick-links">(<a href="index.html#examples">examples</a>|<a href="index.html#subcommands">subcommands</a>)</span></div>
+		<main id="main" class="site-main" role="main">
+
+		
+			<article id="post-25601" class="post-25601 command type-command status-publish hentry">
+	<header class="entry-header">
+				<h2 class="entry-title"><a href="index.html" rel="bookmark">wp scaffold <span>&#60;command&#62;</a></h2>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p class="excerpt">Generate code for post types, taxonomies, plugins, child themes, etc.</p>
+		
+		
+
+<h3 class="toc-heading" id="examples" tabindex="-1">EXAMPLES <a href="index.html#examples" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">EXAMPLES</span></a></h3>
+<pre><code># Generate a new plugin with unit tests
+$ wp scaffold plugin sample-plugin
+Success: Created plugin files.
+Success: Created test files.
+
+# Generate theme based on _s
+$ wp scaffold _s sample-theme --theme_name="Sample Theme" --author="John Doe"
+Success: Created theme 'Sample Theme'.
+
+# Generate code for post type registration in given theme
+$ wp scaffold post-type movie --label=Movie --theme=simple-life
+Success: Created /var/www/example.com/public_html/wp-content/themes/simple-life/post-types/movie.php
+</code></pre>
+
+			<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="subcommands" tabindex="-1">SUBCOMMANDS <a href="index.html#subcommands" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">SUBCOMMANDS</span></a></h3>
+			<table>
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+											<tr>
+							<td><a href="child-theme/index.html">wp scaffold child-theme</a></td>
+							<td><p>Generate child theme based on an existing theme.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="plugin/index.html">wp scaffold plugin</a></td>
+							<td><p>Generate starter code for a plugin.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="plugin-tests/index.html">wp scaffold plugin-tests</a></td>
+							<td><p>Generate files needed for running PHPUnit tests in a plugin.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="post-type/index.html">wp scaffold post-type</a></td>
+							<td><p>Generate PHP code for registering a custom post type.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="taxonomy/index.html">wp scaffold taxonomy</a></td>
+							<td><p>Generate PHP code for registering a custom taxonomy.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="theme-tests/index.html">wp scaffold theme-tests</a></td>
+							<td><p>Generate files needed for running PHPUnit tests in a theme.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="_s/index.html">wp scaffold _s</a></td>
+							<td><p>Generate starter code for a theme based on _s.</p>
+</td>
+						</tr>
+									</tbody>
+			</table>
+		<p><em><a href="https://wordpress.org/about/license/" title="WordPress is open source software">License / GPLv2</a></em></p>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+
+</div></body>
+</html>

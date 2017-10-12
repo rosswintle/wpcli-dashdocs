@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WP-CLI Commands | WordPress Developer Resources</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' id='wp-dev-sass-compiled-css'  href='https://developer.wordpress.org/wp-content/themes/pub/wporg-developer/stylesheets/main.css?ver=20171008' type='text/css' media='all' />
+</head>
+ 
+
+<body id="wordpress-org" class="command-template-default single single-command postid-25609 admin-bar no-customize-support">
+<div class="devhub-wrap"><div id="content" class="site-content">
+
+	<div id="content-area" class="command-template-default single single-command postid-25609 admin-bar no-customize-support">
+
+		
+		<div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
+			<span class="trail-browse">Browse:</span> 
+			<span class="trail-begin"><a href="https://developer.wordpress.org" title="WordPress Developer Resources" rel="home">Home</a></span> <span class="sep">&#47;</span> 
+			<span class="trail-inner"><a href="../commands.html">Commands</a></span> <span class="sep">&#47;</span> <span class="trail-end">wp term</span>
+		<span class="quick-links">(<a href="index.html#examples">examples</a>|<a href="index.html#subcommands">subcommands</a>)</span></div>
+		<main id="main" class="site-main" role="main">
+
+		
+			<article id="post-25609" class="post-25609 command type-command status-publish hentry">
+	<header class="entry-header">
+				<h2 class="entry-title"><a href="index.html" rel="bookmark">wp term <span>&#60;command&#62;</a></h2>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p class="excerpt">Manage terms.</p>
+		
+		
+
+<h3 class="toc-heading" id="examples" tabindex="-1">EXAMPLES <a href="index.html#examples" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">EXAMPLES</span></a></h3>
+<pre><code># Create a new term.
+$ wp term create category Apple --description="A type of fruit"
+Success: Created category 199.
+
+# Get details about a term.
+$ wp term get category 199 --format=json --fields=term_id,name,slug,count
+{"term_id":199,"name":"Apple","slug":"apple","count":1}
+
+# Update an existing term.
+$ wp term update category 15 --name=Apple
+Success: Term updated.
+
+# Get the term's URL.
+$ wp term list post_tag --include=123 --field=url
+http://example.com/tag/tips-and-tricks
+
+# Delete post category
+$ wp term delete category 15
+Success: Deleted category 15.
+
+# Recount posts assigned to each categories and tags
+$ wp term recount category post_tag
+Success: Updated category term count
+Success: Updated post_tag term count
+</code></pre>
+
+			<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="subcommands" tabindex="-1">SUBCOMMANDS <a href="index.html#subcommands" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">SUBCOMMANDS</span></a></h3>
+			<table>
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+											<tr>
+							<td><a href="create/index.html">wp term create</a></td>
+							<td><p>Create a new term.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="delete/index.html">wp term delete</a></td>
+							<td><p>Delete an existing term.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="generate/index.html">wp term generate</a></td>
+							<td><p>Generate some terms.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="get/index.html">wp term get</a></td>
+							<td><p>Get details about a term.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="list/index.html">wp term list</a></td>
+							<td><p>List terms in a taxonomy.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="meta/index.html">wp term meta</a></td>
+							<td><p>Manage term custom fields.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="recount/index.html">wp term recount</a></td>
+							<td><p>Recalculate number of posts assigned to each term.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="update/index.html">wp term update</a></td>
+							<td><p>Update an existing term.</p>
+</td>
+						</tr>
+									</tbody>
+			</table>
+		<p><em><a href="https://wordpress.org/about/license/" title="WordPress is open source software">License / GPLv2</a></em></p>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+
+</div></body>
+</html>

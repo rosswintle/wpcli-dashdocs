@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WP-CLI Commands | WordPress Developer Resources</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' id='wp-dev-sass-compiled-css'  href='https://developer.wordpress.org/wp-content/themes/pub/wporg-developer/stylesheets/main.css?ver=20171008' type='text/css' media='all' />
+</head>
+ 
+
+<body id="wordpress-org" class="command-template-default single single-command postid-25579 admin-bar no-customize-support">
+<div class="devhub-wrap"><div id="content" class="site-content">
+
+	<div id="content-area" class="command-template-default single single-command postid-25579 admin-bar no-customize-support">
+
+		
+		<div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
+			<span class="trail-browse">Browse:</span> 
+			<span class="trail-begin"><a href="https://developer.wordpress.org" title="WordPress Developer Resources" rel="home">Home</a></span> <span class="sep">&#47;</span> 
+			<span class="trail-inner"><a href="../commands.html">Commands</a></span> <span class="sep">&#47;</span> <span class="trail-end">wp comment</span>
+		<span class="quick-links">(<a href="index.html#examples">examples</a>|<a href="index.html#subcommands">subcommands</a>)</span></div>
+		<main id="main" class="site-main" role="main">
+
+		
+			<article id="post-25579" class="post-25579 command type-command status-publish hentry">
+	<header class="entry-header">
+				<h2 class="entry-title"><a href="index.html" rel="bookmark">wp comment <span>&#60;command&#62;</a></h2>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p class="excerpt">Manage comments.</p>
+		
+		
+
+<h3 class="toc-heading" id="examples" tabindex="-1">EXAMPLES <a href="index.html#examples" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">EXAMPLES</span></a></h3>
+<pre><code># Create a new comment.
+$ wp comment create --comment_post_ID=15 --comment_content="hello blog" --comment_author="wp-cli"
+Success: Created comment 932.
+
+# Update an existing comment.
+$ wp comment update 123 --comment_author='That Guy'
+Success: Updated comment 123.
+
+# Delete an existing comment.
+$ wp comment delete 1337 --force
+Success: Deleted comment 1337.
+
+# Delete all spam comments.
+$ wp comment delete $(wp comment list --status=spam --format=ids)
+Success: Deleted comment 264.
+Success: Deleted comment 262.
+</code></pre>
+
+			<p class="toc-jump"><a href="index.html#top">Top &uarr;</a></p><h3 class="toc-heading" id="subcommands" tabindex="-1">SUBCOMMANDS <a href="index.html#subcommands" class="anchor"><span aria-hidden="true">#</span><span class="screen-reader-text">SUBCOMMANDS</span></a></h3>
+			<table>
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+											<tr>
+							<td><a href="approve/index.html">wp comment approve</a></td>
+							<td><p>Approve a comment.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="count/index.html">wp comment count</a></td>
+							<td><p>Count comments, on whole blog or on a given post.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="create/index.html">wp comment create</a></td>
+							<td><p>Create a new comment.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="delete/index.html">wp comment delete</a></td>
+							<td><p>Delete a comment.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="exists/index.html">wp comment exists</a></td>
+							<td><p>Verify whether a comment exists.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="generate/index.html">wp comment generate</a></td>
+							<td><p>Generate some number of new dummy comments.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="get/index.html">wp comment get</a></td>
+							<td><p>Get data of a single comment.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="list/index.html">wp comment list</a></td>
+							<td><p>Get a list of comments.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="meta/index.html">wp comment meta</a></td>
+							<td><p>Manage comment custom fields.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="recount/index.html">wp comment recount</a></td>
+							<td><p>Recalculate the comment_count value for one or more posts.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="spam/index.html">wp comment spam</a></td>
+							<td><p>Mark a comment as spam.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="status/index.html">wp comment status</a></td>
+							<td><p>Get status of a comment.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="trash/index.html">wp comment trash</a></td>
+							<td><p>Trash a comment.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="unapprove/index.html">wp comment unapprove</a></td>
+							<td><p>Unapprove a comment.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="unspam/index.html">wp comment unspam</a></td>
+							<td><p>Unmark a comment as spam.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="untrash/index.html">wp comment untrash</a></td>
+							<td><p>Untrash a comment.</p>
+</td>
+						</tr>
+											<tr>
+							<td><a href="update/index.html">wp comment update</a></td>
+							<td><p>Update one or more comments.</p>
+</td>
+						</tr>
+									</tbody>
+			</table>
+		<p><em><a href="https://wordpress.org/about/license/" title="WordPress is open source software">License / GPLv2</a></em></p>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+
+</div></body>
+</html>
